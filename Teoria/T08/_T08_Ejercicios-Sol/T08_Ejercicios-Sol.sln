@@ -1,0 +1,123 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T08_Ejercicios-Prj", "T08_Ejercicios-Prj\T08_Ejercicios-Prj.vcxproj", "{1D02F70D-791C-4FA0-9D34-6575659D6045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Demo1|Any CPU = Demo1|Any CPU
+		Demo1|Mixed Platforms = Demo1|Mixed Platforms
+		Demo1|Win32 = Demo1|Win32
+		Demo1|x64 = Demo1|x64
+		Demo3|Any CPU = Demo3|Any CPU
+		Demo3|Mixed Platforms = Demo3|Mixed Platforms
+		Demo3|Win32 = Demo3|Win32
+		Demo3|x64 = Demo3|x64
+		Demo4|Any CPU = Demo4|Any CPU
+		Demo4|Mixed Platforms = Demo4|Mixed Platforms
+		Demo4|Win32 = Demo4|Win32
+		Demo4|x64 = Demo4|x64
+		Demo5|Any CPU = Demo5|Any CPU
+		Demo5|Mixed Platforms = Demo5|Mixed Platforms
+		Demo5|Win32 = Demo5|Win32
+		Demo5|x64 = Demo5|x64
+		DemoFundamentalMemoriaVirtual|Any CPU = DemoFundamentalMemoriaVirtual|Any CPU
+		DemoFundamentalMemoriaVirtual|Mixed Platforms = DemoFundamentalMemoriaVirtual|Mixed Platforms
+		DemoFundamentalMemoriaVirtual|Win32 = DemoFundamentalMemoriaVirtual|Win32
+		DemoFundamentalMemoriaVirtual|x64 = DemoFundamentalMemoriaVirtual|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Win32.Build.0 = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|x64.ActiveCfg = Debug|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|x64.Build.0 = Debug|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|Any CPU.ActiveCfg = Demo1|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|Mixed Platforms.ActiveCfg = Demo1|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|Mixed Platforms.Build.0 = Demo1|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|Win32.ActiveCfg = Demo1|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|Win32.Build.0 = Demo1|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|x64.ActiveCfg = Demo1|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1|x64.Build.0 = Demo1|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|Any CPU.ActiveCfg = Demo3|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|Mixed Platforms.ActiveCfg = Demo3|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|Mixed Platforms.Build.0 = Demo3|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|Win32.ActiveCfg = Demo3|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|Win32.Build.0 = Demo3|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|x64.ActiveCfg = Demo3|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo3|x64.Build.0 = Demo3|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|Any CPU.ActiveCfg = Demo4|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|Mixed Platforms.ActiveCfg = Demo4|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|Mixed Platforms.Build.0 = Demo4|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|Win32.ActiveCfg = Demo4|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|Win32.Build.0 = Demo4|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|x64.ActiveCfg = Demo4|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo4|x64.Build.0 = Demo4|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|Any CPU.ActiveCfg = Demo5|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|Mixed Platforms.ActiveCfg = Demo5|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|Mixed Platforms.Build.0 = Demo5|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|Win32.ActiveCfg = Demo5|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|Win32.Build.0 = Demo5|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|x64.ActiveCfg = Demo5|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo5|x64.Build.0 = Demo5|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|Any CPU.ActiveCfg = DemoFundamentalMemoriaVirtual|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|Mixed Platforms.ActiveCfg = DemoFundamentalMemoriaVirtual|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|Mixed Platforms.Build.0 = DemoFundamentalMemoriaVirtual|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|Win32.ActiveCfg = DemoFundamentalMemoriaVirtual|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|Win32.Build.0 = DemoFundamentalMemoriaVirtual|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|x64.ActiveCfg = DemoFundamentalMemoriaVirtual|x64
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.DemoFundamentalMemoriaVirtual|x64.Build.0 = DemoFundamentalMemoriaVirtual|x64
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|x64.ActiveCfg = Debug|x64
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Debug|x64.Build.0 = Debug|x64
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo1|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo1|Any CPU.Build.0 = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo1|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo1|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo1|Win32.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo1|x64.ActiveCfg = Debug|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo3|Any CPU.ActiveCfg = Demo3|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo3|Mixed Platforms.ActiveCfg = Demo3|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo3|Mixed Platforms.Build.0 = Demo3|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo3|Win32.ActiveCfg = Demo3|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo3|Win32.Build.0 = Demo3|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo3|x64.ActiveCfg = Demo3|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo4|Any CPU.ActiveCfg = Demo4|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo4|Mixed Platforms.ActiveCfg = Demo4|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo4|Mixed Platforms.Build.0 = Demo4|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo4|Win32.ActiveCfg = Demo4|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo4|Win32.Build.0 = Demo4|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo4|x64.ActiveCfg = Demo4|x64
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo5|Any CPU.ActiveCfg = Demo5|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo5|Mixed Platforms.ActiveCfg = Demo5|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo5|Mixed Platforms.Build.0 = Demo5|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo5|Win32.ActiveCfg = Demo5|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.Demo5|x64.ActiveCfg = Demo5|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.DemoFundamentalMemoriaVirtual|Any CPU.ActiveCfg = DemoFundamentalMemoriaVirtual|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.DemoFundamentalMemoriaVirtual|Mixed Platforms.ActiveCfg = DemoFundamentalMemoriaVirtual|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.DemoFundamentalMemoriaVirtual|Mixed Platforms.Build.0 = DemoFundamentalMemoriaVirtual|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.DemoFundamentalMemoriaVirtual|Win32.ActiveCfg = DemoFundamentalMemoriaVirtual|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.DemoFundamentalMemoriaVirtual|Win32.Build.0 = DemoFundamentalMemoriaVirtual|Any CPU
+		{0AA1536E-FD46-4BF9-80E2-E8B8753959C6}.DemoFundamentalMemoriaVirtual|x64.ActiveCfg = DemoFundamentalMemoriaVirtual|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = ..\..\..
+	EndGlobalSection
+EndGlobal

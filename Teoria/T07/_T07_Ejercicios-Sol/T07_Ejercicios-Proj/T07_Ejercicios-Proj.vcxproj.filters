@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Demo3.cpp" />
+    <ClCompile Include="src\Eje1_2.cpp" />
+    <ClCompile Include="src\Eje3.cpp" />
+    <ClCompile Include="src\Eje4.cpp" />
+    <ClCompile Include="src\Eje5.cpp" />
+    <ClCompile Include="src\Eje6.cpp" />
+    <ClCompile Include="src\Eje7.cpp" />
+    <ClCompile Include="src\Demo7.cpp" />
+    <ClCompile Include="src\Demo_Registro.cpp" />
+    <ClCompile Include="src\Eje8.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="PruebaEjercicio7.txt" />
+    <Text Include="Hola.txt" />
+    <Text Include="holadestino.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\..\..\..\..\Tmp\Eje9Test.bmp" />
+    <Image Include="2x3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="t.dat" />
+    <None Include="Tabla1.dat" />
+  </ItemGroup>
+</Project>

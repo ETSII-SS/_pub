@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\T05_Eje1.cpp" />
+    <ClCompile Include="src\T05_Eje2-ThreadSimple.cpp" />
+    <ClCompile Include="src\T05_Eje3-TerminateThreadIncorrecto.cpp" />
+    <ClCompile Include="src\T05_Demo2-ThreadErrorDatos.cpp" />
+    <ClCompile Include="src\T05_Demo3-VarsGlobales.cpp" />
+    <ClCompile Include="src\T05_Demo4-DatosInstancia.cpp" />
+    <ClCompile Include="src\T05_Demo5-CodigoReentrante.cpp" />
+    <ClCompile Include="src\T05_Eje11.cpp" />
+    <ClCompile Include="src\T05_Eje12-ThreadSimple.cpp" />
+  </ItemGroup>
+</Project>

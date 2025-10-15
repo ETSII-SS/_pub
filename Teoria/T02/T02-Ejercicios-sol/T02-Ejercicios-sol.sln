@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "T02-Ejercicios-prj", "T02-Ejercicios-prj\T02-Ejercicios-prj.vcxproj", "{1D02F70D-791C-4FA0-9D34-6575659D6045}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Demo1_dbg|Win32 = Demo1_dbg|Win32
+		ej2_dbg|Win32 = ej2_dbg|Win32
+		ej4_dbg|Win32 = ej4_dbg|Win32
+		ej5_dbg|Win32 = ej5_dbg|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Debug|Win32.Build.0 = Debug|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1_dbg|Win32.ActiveCfg = Demo1_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Demo1_dbg|Win32.Build.0 = Demo1_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.ej2_dbg|Win32.ActiveCfg = ej2_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.ej2_dbg|Win32.Build.0 = ej2_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.ej4_dbg|Win32.ActiveCfg = ej4_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.ej4_dbg|Win32.Build.0 = ej4_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.ej5_dbg|Win32.ActiveCfg = ej5_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.ej5_dbg|Win32.Build.0 = ej5_dbg|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Release|Win32.ActiveCfg = Release|Win32
+		{1D02F70D-791C-4FA0-9D34-6575659D6045}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = ..\..
+		SolutionGuid = {5E84CD86-44AF-460F-9A1E-738C53367EBF}
+	EndGlobalSection
+EndGlobal

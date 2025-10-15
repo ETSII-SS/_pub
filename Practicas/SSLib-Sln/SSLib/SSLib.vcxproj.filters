@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="CUtils.cpp" />
+    <ClCompile Include="Dbg.cpp" />
+    <ClCompile Include="Crono.cpp" />
+    <ClCompile Include="Filesys.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="sslib">
+      <UniqueIdentifier>{759112d2-f463-4dc5-913f-06f39191afdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sslib\c">
+      <UniqueIdentifier>{8c5d808f-ff0f-4b67-9478-71eb1690595d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sslib\cpp">
+      <UniqueIdentifier>{ea06bbb8-bca5-4f29-9f46-daa0545987cd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sslib\SSLib.h">
+      <Filter>sslib</Filter>
+    </ClInclude>
+    <ClInclude Include="sslib\cpp\Crono.hpp">
+      <Filter>sslib\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="sslib\cpp\Dbg.hpp">
+      <Filter>sslib\cpp</Filter>
+    </ClInclude>
+    <ClInclude Include="sslib\c\CUtils.h">
+      <Filter>sslib\c</Filter>
+    </ClInclude>
+    <ClInclude Include="sslib\cpp\Filesys.hpp">
+      <Filter>sslib\cpp</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

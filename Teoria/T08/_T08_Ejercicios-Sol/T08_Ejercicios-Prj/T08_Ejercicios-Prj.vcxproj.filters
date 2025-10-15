@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Demo1.cpp" />
+    <ClCompile Include="src\Demo3.cpp" />
+    <ClCompile Include="src\Demo5.cpp" />
+    <ClCompile Include="DemoFundamentalMemoriaVirtual.cpp" />
+    <ClCompile Include="src\Demo4.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="in.bmp" />
+  </ItemGroup>
+</Project>
