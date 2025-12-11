@@ -8,7 +8,7 @@
 #define TAM_BUFFER_DbgPrint 1024
 // Definiciones asociadas a la clase 
 namespace ss {
-	
+
 	bool Dbg::_primerUsoClase = true; // Variable estática de clase
 
 	Dbg::Dbg(bool salidaPorPantalla, bool salidaPorDepuracion)
@@ -127,7 +127,7 @@ namespace ss {
 
 	int Dbg::DbgPrint(const char* formatString, ...)
 	{
-		static char buffer[TAM_BUFFER_DbgPrint]="";
+		static char buffer[TAM_BUFFER_DbgPrint] = "";
 
 		va_list args;
 		va_start(args, formatString);
@@ -140,10 +140,9 @@ namespace ss {
 				OutputDebugStringA(buffer); // Imprime en la ventana de salida de depuración
 				if (buffer[ret - 1] != '\n')
 					OutputDebugStringA("\n"); // OutputDebugStringA no da salida hasta que se le envia un caracter new line
-				Sleep(1000); // Espera para que termine de conectar depurador.
+				//Sleep(1000); // Espera para que termine de conectar depurador.
 			}
 		}
 		return ret;
 	}
-	
 } // Fin namespace

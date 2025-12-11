@@ -1,22 +1,19 @@
 // Test clásico de un proyecto de biblioteca. 
 // Consiste símplemente en hacer un proyecto de programa ejecutable que pruebe las funciones/métodos de la biblioteca.
 //
-
-#include <stdio.h>
-#include <locale.h>
-#include "sslib/SSLib.h"
-
-using namespace ss;
-static int BuscaTextoEnArchivos(const char* dirBusqueda, const char* textoABuscar);
+#define TEST_LIB_CLASICO_CPP
+#include "TestLibClasico.h"
 
 static Dbg dbg(true); // Salida por pantalla y por depuración
-int main()
+int main(int argc, char* argv[], char* envp[])
 {
 	setlocale(LC_ALL, "Spanish");
 	
 	FileSys fs;
 
 	dbg.DbgPrint("Versión de la biblioteca: %s\n", dbg.Vesion); // Muestra la versión de la biblioteca por la ventana de depuración
+
+	TestP5_2025_main(argc, argv, envp); 
 
 	int encontrados;
 	const char *pDir= "..";

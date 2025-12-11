@@ -2,5 +2,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="TestLibClasico.cpp" />
+    <ClCompile Include="TestP5_2025.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestLibClasico.h" />
   </ItemGroup>
 </Project>

@@ -16,10 +16,10 @@ namespace ss {
 		const char* cabeceraError = "ERROR";
 		bool _salidaDepuracion; // Si es true, se envía la salida a la ventana de depuración
 		bool _salidaPantalla; // Si es true, se envía la salida a la consola de salida
-		Crono crono;
+		Crono _crono;
 		static bool _primerUsoClase; // Variable estática de clase
 	public:
-		const char* Vesion = "2024.10.07_00";
+		const char* Vesion = "2025.12.03_00";
 		Dbg(bool salidaPorPantalla = false, bool salidaPorDepuracion = true);
 		~Dbg();
 
@@ -49,20 +49,19 @@ namespace ss {
 		/// </summary>
 		/// <returns></returns>
 		bool CronoInicio() {	// Ejemplo de método interno (definido en el propio archivo .h)
-			return crono.Inicio();
+			return _crono.Inicio();
 		}
 		/// <summary>
 		/// Lee segundos transcurridos desde la última llamada a CronoInicio.
 		/// </summary>
 		/// <returns></returns>
 		double CronoLee() {	// Ejemplo de método interno (definido en el propio archivo .h)
-			return crono.Lee();
+			return _crono.Lee();
 		}
 		/// <summary>
 		/// Funciona igual que printf, pero muestra la salida solo por la ventana de salida (depuración) y por consola (opcional)
 		/// </summary>
 		int DbgPrint(const char* formatString, ...);
-
 	};
 
 } // Fin namespace

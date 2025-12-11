@@ -22,7 +22,7 @@
 //#include <stdio.h>
 #include <locale.h>
 #include <Windows.h>
-#include "pLibSS.h"
+#include "sslib\SSLib.h"
 
 BOOL TraverseRegistry(HKEY, LPTSTR, LPTSTR, LPBOOL);
 BOOL DisplayPair(LPTSTR, DWORD, LPBYTE, DWORD, LPBOOL);

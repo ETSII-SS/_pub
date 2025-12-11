@@ -30,6 +30,12 @@ namespace ss {
 		/// <returns></returns>
 		size_t NormalizaRutaGrande(char* rutaANormalizar, size_t tamRuta);
 		double _tiempoUltimoMetodo;
+
+		HANDLE _hArchivoLectura = INVALID_HANDLE_VALUE;
+		char _ultimoNombreArchivoLectura[MAX_PATH] = "";
+		HANDLE _hArchivoEscritura = INVALID_HANDLE_VALUE;
+		char _ultimoNombreArchivoEscritura[MAX_PATH] = "";
+
 	public:
 		FileSys();
 		~FileSys();
@@ -58,7 +64,48 @@ namespace ss {
 		/// <returns>Devuelve el número de veces que se encuentra el bloque a buscar dentro de un archivo. 
 		/// También modifica incrementa bytesPorAhora con el tamaño del archivo. </returns>
 		int BuscaDatoEnArchivo(const char* block, size_t blockSize, const char* fileName, size_t* pBytesPorAhora, int tamBuffer=1024);
-
+		/// <summary>
+/// Crea un archivo de prueba con el nombre, tamaño y tamaño de buffer indicados.
+/// </summary>
+/// <param name="nombre">Nombre del archivo</param>
+/// <param name="tamArchivo">Tamaño archivo</param>
+/// <param name="tamBuffer">tamaño buffer de escritura (1 mínimo) ¿cuanto mayor el buffer, más rápidas las escrituras?</param>
+/// <returns></returns>
+		bool CreaArchivoTest(const char* nombre, uint64_t tamArchivo, size_t tamBuffer = 1024, int64_t* pCuantoLleva = nullptr);
+		/// <summary>
+		/// Abre un archivo para lectura 
+		/// </summary>
+		/// <param name="nombreArchivo">Nombre del archivo a abrir</param>
+		/// <returns>true si se ha abierto correctamente</returns>
+		bool AbreArchivoParaLectura(const char* nombreArchivo);
+		/// <summary>
+		/// Lee un bloque de datos del archivo abierto para lectura
+		/// </summary>
+		/// <param name="nombreArchivo">Nombre del archivo (solo para mensajes de error)</param>
+		/// <param name="pBuffer">Puntero al buffer donde se leen los datos</param>
+		/// <param name="tamBuffer">Tamaño del buffer</param>
+		/// <param name="pLeidos">Número de bytes leídos</param>
+		/// <returns>true si se ha leído correctamente</returns>
+		bool LeeBloque(const char* nombreArchivo, uint8_t* pBuffer, size_t tamBuffer, size_t* pLeidos);
+		/// <summary>
+		/// Cierra el último archivo abierto para lectura
+		/// </summary>
+		bool CierraArchivoLectura();
+		/// <summary>
+		/// Abre un archivo para escritura 
+		/// </summary>
+		/// <param name="nombreArchivo">Nombre del archivo a abrir</param>
+		/// <returns>true si se ha abierto correctamente</returns>
+		bool AbreArchivoParaEscritura(const char* nombreArchivo);
+		/// <summary>
+		/// Escribe un bloque de datos en el archivo abierto para escritura
+		/// </summary>
+		/// <param name="nombreArchivo">Nombre del archivo</param>
+		bool EscribeBloque(const char* nombreArchivo, const uint8_t* pBuffer, size_t tamBuffer);
+		/// <summary>
+		/// Cierra el último archivo abierto para escritura
+		/// </summary>
+		bool CierraArchivoEscritura();
 	};
 
 } // Fin namespace

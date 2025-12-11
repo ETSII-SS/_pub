@@ -1,6 +1,9 @@
 #include "sslib/SSLib.h"
 #include <conio.h>
-
+// Este proyecto está configurado con la opción 
+// multibyte character set (Propiedades de proyecto-->Avanzado-->Juego de caracteres).
+// Hace que todas las funciones de la API de Windows que tienen versión ANSI (ASCII) y Unicode
+// usen la versión ANSI.
 int main(void)
 {
 	BOOL Resultado;
@@ -20,9 +23,12 @@ int main(void)
 	*/
 
 	memset(&ProcStartInfo, 0, sizeof(ProcStartInfo));
+	ProcStartInfo.cb = sizeof(ProcStartInfo);
+	ProcStartInfo.lpTitle = "Proceso Ejercicio T05";
+	// Crear el proceso en una nueva ventana de consola
 	Resultado = CreateProcess(NULL,
 		LineaComando,
-		NULL, NULL, FALSE, 0, NULL, NULL,
+		NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL,
 		&ProcStartInfo,
 		&ProcI);
 	CheckError(FALSE == Resultado, 1, "ERROR: No se pudo crear el proceso\n");

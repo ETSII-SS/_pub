@@ -319,3 +319,147 @@ int FileSys::BuscaDatoEnArchivo(const char* block, size_t blockSize, const char*
 	return res;
 }
 
+
+// El formato de cada linea será:
+// 0000000000;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+#define FORMMATO_LINEA_TEST        "0000000000;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n"
+#define FORMATO_LINEA_TEST_PARA_PRINTF "%010d;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\n"
+bool FileSys::CreaArchivoTest(const char* nombre, uint64_t tamArchivo, size_t tamBuffer, int64_t* pCuantoLLeva)
+{
+	bool res = false;
+	if (tamBuffer < 1)
+		tamBuffer = 1;
+	try {
+		// Crear el archivo de prueba
+		HANDLE hFile = CreateFileA(nombre, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+		if (!_dbg.CheckError(hFile == INVALID_HANDLE_VALUE, "No se pudo crear el archivo %s\n", nombre))
+		{
+			unsigned int nroLinea = 0;
+			// Cadena ASCII para escribir en el archivo
+			char lineaFormateada[sizeof(FORMMATO_LINEA_TEST)] = FORMMATO_LINEA_TEST;
+
+			unsigned int idx = 0;
+			uint64_t nroEscrituras = 0; // todas las variables relacionadas con el tamaño del archivo son int64_t
+			// ya que los archivos pueden ser mayores de 4 GB
+
+			// Crear un búfer para escribir en el archivo
+			uint8_t* pbuffer = new uint8_t[tamBuffer];
+			snprintf(lineaFormateada, sizeof(lineaFormateada), FORMATO_LINEA_TEST_PARA_PRINTF, nroLinea++);
+			for (uint64_t i = 0; i < tamArchivo; i += tamBuffer)
+			{
+				uint64_t j;
+				for (j = 0; j < tamBuffer; j++) {
+					pbuffer[j] = lineaFormateada[idx++];
+					// Cuando idx sea igual que el tamaño de la cadena, se pone a 0
+					if (lineaFormateada[idx] == '\0') {
+						idx = 0;
+						snprintf(lineaFormateada, sizeof(lineaFormateada), FORMATO_LINEA_TEST_PARA_PRINTF, nroLinea++);
+					}
+				}
+				// Escribir el búfer en el archivo
+				int64_t tamAEscribir = min(tamBuffer, tamArchivo - i);
+				DWORD escritos;
+				BOOL ok = WriteFile(hFile, pbuffer, (DWORD)tamAEscribir, &escritos, NULL);
+				if (!_dbg.CheckError(ok == FALSE || escritos != (DWORD)tamAEscribir,
+					"Error escribiendo en el archivo de test %s\n", nombre))
+				{
+					nroEscrituras += escritos;
+					if (pCuantoLLeva != nullptr)
+						*pCuantoLLeva = nroEscrituras;
+				}
+				else
+					break;
+			}
+			CloseHandle(hFile);
+			res = nroEscrituras == (int64_t)tamArchivo;
+			_dbg.CheckError(!res,
+				"Error: el tamaño escrito en el archivo de test %s es incorrecto. Esperado: %llu bytes, escritos: %llu bytes\n",
+				nombre, tamArchivo, nroEscrituras);
+			if (res)
+				_dbg.DbgPrint("Creado archivo de test (%d bytes, buffer: %d):\n%s\n",
+					tamArchivo, tamBuffer, nombre);
+			delete[] pbuffer;
+			res = true;
+		}
+	}
+	catch (const std::exception& e) {
+		_dbg.DbgPrint("Excepción al crear archivo de test %s: %s\n", nombre, e.what());
+	}
+	return res;
+}
+
+bool FileSys::AbreArchivoParaLectura(const char* nombreArchivo)
+{
+	CierraArchivoLectura();
+	_hArchivoLectura = CreateFileA(nombreArchivo, GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	bool res = _hArchivoLectura != INVALID_HANDLE_VALUE;
+	if (res)
+	{
+		strncpy_s(_ultimoNombreArchivoLectura, MAX_PATH, nombreArchivo, _TRUNCATE);
+	}
+	_dbg.CheckError(!res, "No se pudo abrir el archivo para lectura: %s\n", nombreArchivo);
+	return res;
+}
+bool FileSys::LeeBloque(const char* nombreArchivo, uint8_t* pBuffer, size_t tamBuffer, size_t* pLeidos)
+{
+	*pLeidos = 0;
+	DWORD leidos = 0;
+	BOOL res = _hArchivoLectura != INVALID_HANDLE_VALUE && ReadFile(_hArchivoLectura, pBuffer, (DWORD)tamBuffer, &leidos, NULL);
+	if (!_dbg.CheckError(res == FALSE, "Error leyendo bloque del archivo %s\n", nombreArchivo))
+	{
+		*pLeidos = (size_t)leidos;
+	}
+	return res;
+}
+bool FileSys::CierraArchivoLectura()
+{
+	BOOL res = FALSE;
+	if (_hArchivoLectura != INVALID_HANDLE_VALUE)
+	{
+		res = CloseHandle(_hArchivoLectura);
+		_dbg.CheckError(res == FALSE, "Error cerrando el archivo %s\n", _ultimoNombreArchivoLectura);
+		_hArchivoLectura = INVALID_HANDLE_VALUE;
+	}
+	_ultimoNombreArchivoLectura[0] = '\0';
+	return res;
+}
+bool FileSys::AbreArchivoParaEscritura(const char* nombreArchivo)
+{
+	CierraArchivoEscritura();
+	_hArchivoEscritura = CreateFileA(nombreArchivo, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	bool res = _hArchivoLectura != INVALID_HANDLE_VALUE;
+	if (res)
+	{
+		strncpy_s(_ultimoNombreArchivoEscritura, MAX_PATH, nombreArchivo, _TRUNCATE);
+	}
+	_dbg.CheckError(!res, "No se pudo abrir el archivo para escritura: %s\n", nombreArchivo);
+	return res;
+}
+bool FileSys::CierraArchivoEscritura()
+{
+	BOOL res = FALSE;
+	if (_hArchivoEscritura != INVALID_HANDLE_VALUE)
+	{
+		res = CloseHandle(_hArchivoEscritura);
+		_dbg.CheckError(res == FALSE, "Error cerrando el archivo %s\n", _ultimoNombreArchivoEscritura);
+		_hArchivoEscritura = INVALID_HANDLE_VALUE;
+	}
+	_ultimoNombreArchivoEscritura[0] = '\0';
+	return res;
+}
+bool FileSys::EscribeBloque(const char* nombreArchivo, const uint8_t* pBuffer, size_t tamBuffer)
+{
+	DWORD escritos = 0;
+	BOOL res = _hArchivoEscritura != INVALID_HANDLE_VALUE && WriteFile(_hArchivoEscritura, pBuffer, (DWORD)tamBuffer, &escritos, NULL);
+	if (!_dbg.CheckError(res == FALSE, "Error escribiendo bloque del archivo %s\n", nombreArchivo))
+	{
+		if (escritos != tamBuffer)
+		{
+			res = false;
+			_dbg.CheckError(true, "Error escribiendo bloque del archivo %s: escritos %d bytes, se querían escribir %d bytes\n",
+				nombreArchivo, escritos, tamBuffer);
+		}
+	}
+	return res;
+}
+

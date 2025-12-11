@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <Windows.h>
-#include "pLibSS.h"
+#include "sslib\SSLib.h"
 
 // EJERCICIO 3
 
@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 	HANDLE hArchivo;
 
 	hArchivo = CreateFile("Hola.txt",GENERIC_READ, FILE_SHARE_READ, NULL,	CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
-	CheckError(hArchivo == INVALID_HANDLE_VALUE, "No se pudo abrir el archivo", 1);
+	CheckError(hArchivo == INVALID_HANDLE_VALUE, 1, "No se pudo abrir el archivo");
 
 	// ¿Cómo podemos probar el efecto de dwSharedMode desde el mismo programa? FILE_SHARE_READ | FILE_SHARE_WRITE	
 

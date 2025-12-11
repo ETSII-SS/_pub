@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <Windows.h>
-#include "pLibSS.h"	// <- Sustituir por biblioteca privada...
+#include "sslib\SSLib.h"	
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 		NULL,
 		CREATE_ALWAYS,
 		FILE_ATTRIBUTE_NORMAL, NULL);
-	CheckError(hArchivo == INVALID_HANDLE_VALUE, "No se pudo abrir el archivo", 1);
+	CheckError(hArchivo == INVALID_HANDLE_VALUE, 1, "No se pudo abrir el archivo");
 
 #if  TRUE
 	// Ejercicio 2: ¿Dónde están los errores en este código
@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		sizeof(Cadena), // Tamaño del buffer
 		&Escritos,	// <- Aquí devuelve cuánto se ha escrito realmente
 		NULL);	// <- Solo para escrituras asincronas. Solo usaremos operaciones síncronas. 
-	CheckError(FALSE==res || sizeof(Cadena)!= Escritos, "No se pudo escribir en el archivo", 1);
+	CheckError(FALSE==res || sizeof(Cadena)!= Escritos, 1, "No se pudo escribir en el archivo");
 	
 #endif
 	CloseHandle(hArchivo);

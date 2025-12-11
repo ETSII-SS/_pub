@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <locale.h>
 #include <Windows.h>
-#include "pLibSS.h"	// <- Sustituir por biblioteca privada...
+#include "sslib\SSLib.h"	// <- Sustituir por biblioteca privada...
 
 // lista todos los archivos de un directorio
 void listaArchivos(char * ruta) {
@@ -15,7 +15,7 @@ void listaArchivos(char * ruta) {
 	snprintf(expresionBusqueda, sizeof(expresionBusqueda), "%s\\*", ruta);
 
 	hFind = FindFirstFile(expresionBusqueda, &FindData);
-	CheckError(INVALID_HANDLE_VALUE == hFind, "No se pudo hacer la primera búsqueda", 1);
+	CheckError(INVALID_HANDLE_VALUE == hFind, 1, "No se pudo hacer la primera búsqueda");
 	do	{
 		if (FindData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)		{
 			printf("  %s   <DIR>\n", FindData.cFileName);
@@ -27,7 +27,7 @@ void listaArchivos(char * ruta) {
 			printf("  %s   %ld bytes\n", FindData.cFileName, filesize.QuadPart);
 		}
 	} while (FindNextFile(hFind, &FindData) != 0);
-	CheckError(GetLastError() != ERROR_NO_MORE_FILES, "No se pudo ejecutar FindNextFile", 1);
+	CheckError(GetLastError() != ERROR_NO_MORE_FILES, 1, "No se pudo ejecutar FindNextFile");
 	FindClose(hFind);
 }
 
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 	setlocale(LC_ALL, "Spanish");
 
 	// lista todos los archivos del directorio de trabajo
-	CheckError(0 == GetCurrentDirectory(MAX_PATH, rutaDir), "No se pudo obtener el directorio de trabajo", 1);
+	CheckError(0 == GetCurrentDirectory(MAX_PATH, rutaDir), 1, "No se pudo obtener el directorio de trabajo");
 	listaArchivos(rutaDir);
 
 	printf("\nPulse una tecla para terminar\n");
